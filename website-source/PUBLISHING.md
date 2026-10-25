@@ -4,13 +4,30 @@ This directory contains the website's original source. It is licensed under the
 repository's AGPL-3.0-only license. Python 3.9+ is the only build dependency.
 No npm packages, external fonts, analytics, backend, or paid hosting are required.
 
-## Current ownership gate
+## Live deployment
+
+- Website: https://whytocode.github.io/secure-clock-vault/
+- Public repository: https://github.com/whytocode/secure-clock-vault
+- Current release: https://github.com/whytocode/secure-clock-vault/releases/tag/v3.20
+
+The user approved the personal account `whytocode`. The live site uses GitHub Pages
+with enforced HTTPS and release assets hosted by GitHub Releases. All three release
+assets (APK, source, and signature sidecar) were downloaded without authentication
+and verified against their expected sizes and SHA-256 hashes after publication.
+No custom domain or paid hosting was purchased.
+
+The public repository has a separate, clean history. This Android checkout's history
+and private signing material were not published. Preserve that separation on updates.
+
+## Publishing authorization
 
 Publication requires the user's approval of the public GitHub owner/repository.
 Do not infer that a connected work account is approved for personal distribution.
+GitHub Enterprise Managed User accounts cannot create public repositories; use the
+approved personal account rather than trying to override enterprise restrictions.
 Until an owner is approved, build the preview without `--repository`: it explicitly
 states that downloads and support are not live, and includes a disallow-all robots file.
-No GitHub repository or Pages website has been provisioned by these build scripts.
+The build scripts only generate files; they do not provision GitHub resources.
 
 ## Build and review
 
