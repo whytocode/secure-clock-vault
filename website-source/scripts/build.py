@@ -64,6 +64,8 @@ def build(directory, output, repository=None):
         raise FileExistsError("Output is not empty. Choose a new build directory; no files were removed.")
 
     values = {
+        "STYLESHEET_URL": f'assets/site.css?v={sha256(ROOT / "assets/site.css")[:12]}',
+        "SCRIPT_URL": f'assets/site.js?v={sha256(ROOT / "assets/site.js")[:12]}',
         "VERSION": html.escape(release["version"]),
         "APK_SIZE": f'{release["apkBytes"] / 1_000_000:.1f} MB',
         "APK_SHA256": release["apkSha256"],

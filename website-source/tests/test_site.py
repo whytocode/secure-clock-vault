@@ -6,7 +6,7 @@ import unittest
 from argparse import ArgumentTypeError
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("site_build", ROOT / "scripts/build.py")
@@ -69,6 +69,34 @@ class SiteTests(unittest.TestCase):
         for key in ("apkSha256", "sourceSha256", "certificateSha256"):
             self.assertRegex(release[key], r"^[0-9a-f]{64}$")
 
+    def test_feature_catalogue_contract(self):
+        document = Document((ROOT / "index.html").read_text())
+        elements = {attrs["id"]: (tag, attrs) for tag, attrs in document.elements if "id" in attrs}
+        cards = [attrs for tag, attrs in document.elements if "data-feature-card" in attrs]
+        filters = [attrs for tag, attrs in document.elements if "data-category" in attrs]
+        categories = {attrs["data-category"] for attrs in filters} - {"all"}
+        self.assertEqual(len(cards), 20)
+        self.assertEqual(categories, {"library", "media", "clock", "sharing", "tools"})
+        self.assertEqual([attrs["data-category"] for attrs in filters if attrs["aria-pressed"] == "true"], ["all"])
+        covered = set()
+        for card in cards:
+            self.assertNotIn("hidden", card, "All content must be available without JavaScript")
+            assigned = set(card["data-categories"].split())
+            self.assertTrue(assigned)
+            self.assertLessEqual(assigned, categories)
+            covered.update(assigned)
+        self.assertEqual(covered, categories)
+        self.assertIn("hidden", elements["feature-controls"][1])
+        self.assertIn("hidden", elements["feature-empty"][1])
+        self.assertEqual(elements["feature-search"][1]["aria-controls"], "feature-catalogue")
+        self.assertEqual(elements["feature-results"][1]["role"], "status")
+        self.assertEqual(elements["feature-reset"][1]["type"], "button")
+        self.assertTrue(any(tag == "label" and attrs.get("for") == "feature-search"
+                            for tag, attrs in document.elements))
+        for anchor in ("showcase", "clock", "sharing", "guides", "safety", "download", "questions", "resources",
+                       "guide-start", "guide-backup", "guide-chat", "guide-group", "guide-nearby", "guide-export"):
+            self.assertIn(anchor, document.ids)
+
     def test_screenshot_dimensions(self):
         import struct
         for name, height in (("library.png", 1031), ("review.png", 1031), ("members.png", 1059)):
@@ -84,7 +112,9 @@ class SiteTests(unittest.TestCase):
             return sum(c * weight for c, weight in zip(linear, (0.2126, 0.7152, 0.0722)))
         for foreground, background in (("5d6573", "f6f7f9"), ("5d6573", "eceff5"),
                                        ("ffffff", "315bd6"), ("17377e", "e8eeff"),
-                                       ("495363", "f6f7f9")):
+                                       ("495363", "f6f7f9"), ("5d6573", "e8eeff"),
+                                       ("c0c9d9", "273958"), ("b3c3ff", "273958"),
+                                       ("f6f7f9", "344968"), ("495363", "e8ecf4")):
             light, dark = sorted((luminance(foreground), luminance(background)), reverse=True)
             self.assertGreaterEqual((light + 0.05) / (dark + 0.05), 4.5)
 
@@ -118,6 +148,8 @@ class SiteTests(unittest.TestCase):
                             target /= "index.html"
                         self.assertTrue(target.is_file(), f"Missing link target: {link}")
                         self.assertTrue(target.resolve().is_relative_to(output))
+                        if parsed.path in ("assets/site.css", "assets/site.js"):
+                            self.assertEqual(parse_qs(parsed.query), {"v": [site_build.sha256(target)[:12]]})
                         if parsed.fragment:
                             self.assertIn(unquote(parsed.fragment), Document(target.read_text()).ids)
                 home = (output / "index.html").read_text()

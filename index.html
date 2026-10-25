@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A considered home for your private files. Discover Secure Clock Vault for Android: encrypted storage, a flexible media library, and optional private chats.">
+  <meta name="description" content="A little clock. A private world. Explore Secure Clock Vault for Android: encrypted files, media tools, private chats, backups, practical guides, and free APK downloads.">
   <meta name="theme-color" content="#f6f7f9">
   <meta name="referrer" content="no-referrer">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>Secure Clock Vault &mdash; Your files. Your space.</title>
+  <title>Secure Clock Vault &mdash; A little clock. A private world.</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/site.css">
-  <script src="assets/site.js" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=59292f8792ff">
+  <script src="assets/site.js?v=fb997acebaad" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -21,6 +21,8 @@
     </a>
     <nav aria-label="Main navigation">
       <a href="#features">Explore</a>
+      <a href="#guides">Guides</a>
+      <a href="#safety">Security</a>
       <a href="#questions">Help</a>
       <a class="nav-download" href="#download">Get the app <span aria-hidden="true">&darr;</span></a>
     </nav>
@@ -29,12 +31,13 @@
   <main id="main">
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> An independent Android app</p>
-        <h1 id="hero-title">Your files.<br>Your space.<br><span>Your control.</span></h1>
-        <p class="hero-description">An encrypted library for the things you keep close. A familiar clock for the everyday. One thoughtfully designed app.</p>
+        <a class="release-pill" href="#sharing"><span>New in 3.20</span> Encrypted group chats <span aria-hidden="true">&rarr;</span></a>
+        <p class="eyebrow hero-eyebrow">An independent Android app</p>
+        <h1 id="hero-title">A little clock.<br><span>A private world.</span></h1>
+        <p class="hero-description">Your photos, files, notes, and conversations deserve their own space. Keep them in an encrypted vault, enjoy a richer media library, and return to a beautifully ordinary clock.</p>
         <div class="actions">
           <a class="button primary" href="#download">Get the Android app <span aria-hidden="true">&darr;</span></a>
-          <a class="text-link" href="#features">Take a closer look <span aria-hidden="true">&rarr;</span></a>
+          <a class="text-link" href="#showcase">See it in action <span aria-hidden="true">&rarr;</span></a>
         </div>
         <p class="quiet hero-note">Free &amp; open source <span aria-hidden="true">&middot;</span> Android 8.0+ <span aria-hidden="true">&middot;</span> No ads</p>
       </div>
@@ -60,22 +63,122 @@
       <div><span class="principle-number">03</span><p><strong>Sharing is a choice</strong><span>Connect only when you choose.</span></p></div>
     </div>
 
+    <nav class="jump-nav section-shell" aria-label="Explore this page">
+      <span>Everything, right here</span>
+      <a href="#features">Feature finder</a>
+      <a href="#clock">The clock</a>
+      <a href="#sharing">Ways to share</a>
+      <a href="#guides">How-to guides</a>
+      <a href="#resources">Source &amp; support</a>
+    </nav>
+
     <section id="features" class="section-shell section-space" aria-labelledby="features-title">
       <div class="section-heading">
-        <div><p class="eyebrow">Room for your everyday</p><h2 id="features-title">More than a place<br>to put your files.</h2></div>
-        <p>Keep things organized. Enjoy your media. Share deliberately. Without turning your library into a cloud account.</p>
+        <div><p class="eyebrow">The complete toolkit</p><h2 id="features-title">Not just a lock.<br>A lot to unlock.</h2></div>
+        <p>Explore what version 3.20 can actually do. Open a card for the details, including the limits that matter.</p>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#9638;</span><h3>A library that feels like yours</h3><p>Import files and folders, preserve their structure, and organize with rename, move, search, and favorites. File contents and sensitive names are encrypted.</p></article>
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#9655;</span><h3>See the bigger picture</h3><p>Browse image and video previews in a grid, scroll through the carousel, or open multiple items in split view. Keep your favorites within reach.</p></article>
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#8644;</span><h3>Make room, one card at a time</h3><p>Swipe right to keep or left to recycle. Preview the next cards as you go. Restore mistakes from a folder-style bin before they are permanently deleted.</p></article>
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#9719;</span><h3>A clock with a purpose</h3><p>Supreme Mode switches to a dedicated clock experience with alarms and a timer. The launcher name stays Clock. Alarm delivery depends on Android permissions.</p></article>
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#8599;</span><h3>Connect on your terms</h3><p>Use optional end-to-end encrypted direct and group chats. Invite friends, manage members, and send vault files through SimpleX relays. Chats stop when the vault locks.</p></article>
-        <article class="feature-card"><span class="feature-symbol" aria-hidden="true">&#9633;</span><h3>Keep an independent copy</h3><p>Create a password-encrypted portable library backup. Or explicitly send files nearby over a shared local network. Neither happens automatically.</p></article>
+      <div id="feature-controls" class="feature-controls" hidden>
+        <div class="feature-search-row">
+          <div class="feature-search"><label for="feature-search">Find a feature</label><input id="feature-search" type="search" placeholder="Try split view, backup, notes, or QR..." maxlength="120" aria-controls="feature-catalogue" aria-describedby="feature-results" autocomplete="off"></div>
+          <button id="feature-reset" type="button" class="button secondary">Reset filters</button>
+        </div>
+        <div class="filter-chips" role="group" aria-label="Feature categories">
+          <button type="button" data-category="all" aria-pressed="true">All features</button>
+          <button type="button" data-category="library" aria-pressed="false">Files &amp; privacy</button>
+          <button type="button" data-category="media" aria-pressed="false">Photos &amp; video</button>
+          <button type="button" data-category="clock" aria-pressed="false">Clock</button>
+          <button type="button" data-category="sharing" aria-pressed="false">Sharing</button>
+          <button type="button" data-category="tools" aria-pressed="false">Backup &amp; tools</button>
+        </div>
+        <p id="feature-results" class="quiet" role="status" aria-live="polite" aria-atomic="true"></p>
       </div>
+      <noscript><p class="quiet catalogue-note">All features are shown below. Search and category filters are optional; the full guide works without JavaScript.</p></noscript>
+      <div id="feature-catalogue" class="feature-grid">
+        <article class="feature-card" data-feature-card data-categories="library">
+          <span class="card-kicker">Your library</span><h3>Bring the whole folder</h3><p>Import individual files, multiple selections, or entire folder trees. Keep the structure you already understand.</p>
+          <details><summary>Details &amp; limits</summary><div><ul><li>Create, rename, move, search, and sort inside the vault. Select one, several, or all visible items.</li><li>Imports stream into encrypted storage. Original deletion is a separate, explicit offer after verification; providers can refuse it.</li></ul><a href="#guide-start">Start with a first import</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library">
+          <span class="card-kicker">Separate spaces</span><h3>Different passwords. Different vaults.</h3><p>Keep independent libraries with their own keys and encrypted profile information.</p>
+          <details><summary>Details &amp; limits</summary><div><p>The app supports up to five password-routed profiles. Each password opens its matching vault, without listing other profiles on the unlock screen. A compromised device may still reveal that multiple profile records exist; this is not guaranteed forensic concealment.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media">
+          <span class="card-kicker">A better view</span><h3>Grid. Carousel. Split.</h3><p>See image and video previews, swipe between media, or compare up to four items with <strong>+ Split</strong>.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Images support pinch and double-tap zoom. Videos use seekable encrypted streams, looping, and temporary A/B loop points. Unsupported codecs or previews are reported instead of silently replaced. Only the current carousel page plays video.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media">
+          <span class="card-kicker">Make it yours</span><h3>Edit images, keep originals</h3><p>Crop, rotate, resize, draw, annotate, and add manual black redaction rectangles.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Edits save as a new encrypted copy beside the original. Processing is bounded to a 4096-pixel maximum edge. Redaction is manual, not automatic face or text detection. Image-editing working buffers stay in memory.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media tools">
+          <span class="card-kicker">Video essentials</span><h3>Trim, mute, snapshot, convert</h3><p>Save a frame, shorten a compatible MP4, mute its audio, or remux supported M4V video into MP4.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Results are new encrypted files. Trims follow platform keyframe boundaries; conversion changes the container, not the codec, and does not bypass DRM. Some editing/conversion operations require temporary app-private plaintext files. <a href="#safety">Read the storage caveat.</a></p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media">
+          <span class="card-kicker">Find that moment</span><h3>Video bookmarks &amp; contact sheets</h3><p>Name important playback positions, jump back to them, or create a visual summary of scenes.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Keep up to 100 bookmarks per video. Generate an encrypted JPEG with 6, 12, or 20 scenes, or up to 20 saved bookmarks. Frames are the nearest available sync frames, not a frame-exact promise. Saved sheets are independent images.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media">
+          <span class="card-kicker">Your own screening room</span><h3>Presentation Studio</h3><p>Arrange photos and videos into saved playlists, with transitions, timing, shuffle, and optional vault audio.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Add items from the viewer or across folders. Playlist reminders return through authentication rather than exposing media automatically. The cast action opens Android's system settings; receiver compatibility and mirroring are device-dependent.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media library">
+          <span class="card-kicker">A lighter library</span><h3>Review one card at a time</h3><p>Swipe right to keep. Swipe left to recycle. The next cards move forward as you decide.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Keep and Recycle buttons offer the same actions without swiping. Review covers the current folder's photos/videos, not its subfolders. Keeping does not move or mark an item as Loved. Leaving starts a new review pass next time.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="media library">
+          <span class="card-kicker">Keep favorites close</span><h3>Loved photos &amp; videos</h3><p>Tap a heart to collect favorites across the current vault, without duplicating the files.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Loved choices survive renames, moves, and locks, and are included in portable library backups. They stay within the current profile and are not sent when you share the file. Recycled media stays out of Loved until restored.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library tools">
+          <span class="card-kicker">Room for second thoughts</span><h3>A proper recycle bin</h3><p>Browse deleted folders, preview media, search, multi-select, restore, or explicitly empty the entire bin.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Choose 7, 30, or 90 days of retention, or never auto-purge. Encrypted contents remain until purged. Permanent deletion requires confirmation and is not guaranteed physical flash erasure.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library tools">
+          <span class="card-kicker">Beyond files</span><h3>Notes, credentials &amp; TOTP</h3><p>Keep encrypted notes, usernames, passwords, links, document records, and optional one-time-code secrets.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Document records can reference an imported vault file. Offline TOTP uses six digits and a 30-second period, and depends on an accurate device clock. The app does not perform account enrollment or provide account recovery.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="clock">
+          <span class="card-kicker">Useful on the outside, too</span><h3>Clock faces, alarms &amp; timer</h3><p>Choose an Atmospheric, Mechanical, or Flip launch face, with the full clock experience available through camouflage mode.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Seconds, gentle motion, and an optional next-alarm time badge are configurable. Alarms and timers rely on Android's scheduling and notification permissions. Time-inspired artwork is not live weather or an astronomical prediction.</p><a href="#clock">Meet the clock</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="sharing">
+          <span class="card-kicker">One-to-one</span><h3>Private chats, by invitation</h3><p>Connect with a display name and invitation link. No phone number or system Contacts permission is required.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Messages use SimpleX end-to-end encryption. Compare security codes through a trusted channel; a contact's saved verification rule controls file sharing. Chats connect only while the vault is unlocked. No locked-screen chat notifications are provided.</p><a href="#guide-chat">Connect with a friend</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="sharing">
+          <span class="card-kicker">New in 3.20</span><h3>Bring your group together</h3><p>Create a group, invite connected friends, verify members, manage admins, and share encrypted messages and files.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Invitees explicitly join. New groups do not forward earlier history to future members by default. Original recipients' verified vault-save receipts govern automatic cleanup; one recipient or a removed member cannot stand in for everyone.</p><a href="#guide-group">Create your first group</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="sharing">
+          <span class="card-kicker">Across the room</span><h3>Nearby, even without internet</h3><p>Pair two phones on the same Wi-Fi or manually enabled hotspot using a QR code or pasted pairing code.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Offline pairing needs no chat identity and never falls back to a relay. Offers support up to 50 files, each up to 100 MiB, and expire after 30 minutes. Router isolation or local-network restrictions can block a connection.</p><a href="#guide-nearby">Use offline Nearby</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="tools">
+          <span class="card-kicker">An independent copy</span><h3>Encrypted backup &amp; restore</h3><p>Create a portable <code>.scvbackup</code> with a separate password, then restore the backed-up library on another installation.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Backups include the active profile's files, records, playlists, bookmarks, and recycled items. They exclude chat identity/history, pending transfers, other profiles, and clock settings. A completed read-back verification is required before success.</p><a href="#guide-backup">Make a backup you can trust</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library tools">
+          <span class="card-kicker">A deliberate exit</span><h3>File Unlock &amp; export</h3><p>Explicitly export selected files or whole folders, preserving structure and keeping vault originals unchanged.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Exported copies are plaintext. Existing destination names receive collision-safe suffixes instead of being overwritten. Secure records export as JSON with their private values; review partial-failure reports carefully.</p><a href="#guide-export">Understand export first</a></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="tools">
+          <span class="card-kicker">Know your way around</span><h3>Guided tutorials &amp; vault health</h3><p>Find controls with opt-in walkthroughs, inspect your vault's health, and manage app-private cleanup.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Open Tools and more for Guided tutorials, About and help, or Vault health. Tutorials explain controls without performing the action for you. Health checks concern app-private storage, not original files elsewhere, and do not replace a backup.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library sharing">
+          <span class="card-kicker">From other apps</span><h3>Share into Clock</h3><p>Send local media or supported public HTTPS media links to Clock through Android's share sheet.</p>
+          <details><summary>Details &amp; limits</summary><div><p>Choose an encrypted destination. Unsupported public media can be retained as an encrypted link instead. Login restrictions, paywalls, encrypted streams, and DRM are not bypassed. Import only material you own or have permission to retain.</p></div></details>
+        </article>
+        <article class="feature-card" data-feature-card data-categories="library tools">
+          <span class="card-kicker">Quieter names</span><h3>Media-name obfuscation</h3><p>Replace image/video display names across a selected folder tree with random names while retaining private playback.</p>
+          <details><summary>Details &amp; limits</summary><div><p>This irreversible action changes names in the encrypted vault index. It does not rename, remove, or make external originals untraceable. Vault payloads already use opaque internal storage names.</p></div></details>
+        </article>
+      </div>
+      <div id="feature-empty" class="feature-empty" hidden><h3>No matching features</h3><p>Try a shorter search or choose another category. Reset filters to see the whole toolkit.</p></div>
     </section>
 
-    <section class="showcase section-space" aria-labelledby="showcase-title">
+    <section id="showcase" class="showcase section-space" aria-labelledby="showcase-title">
       <div class="section-shell">
         <div class="section-heading">
           <div><p class="eyebrow">A closer look</p><h2 id="showcase-title">Less clutter.<br>More of what matters.</h2></div>
@@ -90,18 +193,60 @@
       </div>
     </section>
 
-    <section class="section-shell section-space protection" aria-labelledby="protection-title">
-      <div><p class="eyebrow">Privacy, with perspective</p><h2 id="protection-title">Built to protect.<br>Honest about limits.</h2><a class="text-link" href="privacy.html">Read the privacy &amp; security details <span aria-hidden="true">&rarr;</span></a></div>
+    <section id="clock" class="clock-section section-space" aria-labelledby="clock-title">
+      <div class="section-shell clock-layout">
+        <figure class="clock-art">
+          <div class="clock-dial" aria-hidden="true"><span class="dial-twelve">12</span><span class="dial-three">3</span><span class="dial-six">6</span><span class="dial-nine">9</span><span class="hour-hand"></span><span class="minute-hand"></span><span class="dial-center"></span></div>
+          <figcaption>Original illustrative clock artwork, not an app screenshot.</figcaption>
+        </figure>
+        <div class="clock-copy"><p class="eyebrow">Right on time</p><h2 id="clock-title">A proper clock.<br>Not just a cover.</h2><p>Keep time with an atmosphere that follows the day, a mechanical-inspired face, or animated flip tiles. Choose your look inside the vault without exposing settings on the locked face.</p>
+          <div class="clock-styles"><div><strong>Atmospheric</strong><span>Dawn-to-night artwork, digital or analog.</span></div><div><strong>Mechanical</strong><span>Emerald, Midnight, and Champagne finishes.</span></div><div><strong>Flip</strong><span>Split-flap hours and minutes, with optional motion.</span></div></div>
+          <p class="clock-footnote">The full clock mode includes Clock, Alarms, and Timer. It keeps the launcher name <strong>Clock</strong>. Notifications, exact-alarm access, and device settings affect delivery; the artwork is not a weather service.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sharing" class="section-shell section-space" aria-labelledby="sharing-title">
+      <div class="section-heading"><div><p class="eyebrow">Sharing, without the guesswork</p><h2 id="sharing-title">Across the room.<br>Or across the group.</h2></div><p>Choose the route that fits. Sharing is optional, and receiving a file is an explicit action, not an automatic public-gallery download.</p></div>
+      <div class="sharing-grid">
+        <article class="route-card"><span class="route-number">01 / A friend</span><h3>Direct chat</h3><p>Invite a friend, check their identity, and send messages or selected vault files through encrypted relays.</p><dl><div><dt>Connection</dt><dd>Internet and relay access</dd></div><div><dt>File limit</dt><dd>100 MiB per file</dd></div><div><dt>Best for</dt><dd>One-to-one conversations</dd></div></dl><a href="#guide-chat">Set up a conversation <span aria-hidden="true">&rarr;</span></a></article>
+        <article class="route-card featured-route"><span class="route-number">02 / Your group</span><h3>Group chat</h3><p>Invite connected friends, manage members, and track confirmed vault saves for the original recipients.</p><dl><div><dt>Connection</dt><dd>Encrypted relay delivery only</dd></div><div><dt>File limit</dt><dd>100 MiB per file</dd></div><div><dt>Compatibility</dt><dd>Version 3.20+ for vault files</dd></div></dl><a href="#guide-group">Bring a group together <span aria-hidden="true">&rarr;</span></a></article>
+        <article class="route-card"><span class="route-number">03 / Next to you</span><h3>Offline Nearby</h3><p>Pair directly on the same local network. No chat identity, internet access, or relay fallback is needed.</p><dl><div><dt>Connection</dt><dd>Shared Wi-Fi or hotspot</dd></div><div><dt>Offer limit</dt><dd>50 files, 100 MiB each</dd></div><div><dt>Pairing</dt><dd>QR or code; expires in 30 minutes</dd></div></dl><a href="#guide-nearby">Pair two phones <span aria-hidden="true">&rarr;</span></a></article>
+      </div>
+      <div class="sharing-note"><strong>Nearby preferred is different from offline pairing.</strong> Inside a chat, it uses relay signaling, tries the local route, and can fall back to relay delivery. Standalone offline pairing never does. Keep both vaults open during transfers.</div>
+      <div class="receipt-strip"><div><strong>Sent is not saved.</strong><p>A relay accepting a file is not the same as a recipient verifying and saving it into their vault.</p></div><div><strong>Saved is not remotely erased.</strong><p>Confirmed saves can trigger cleanup requests. Those requests cannot prove every remote backup or recipient copy was deleted.</p></div></div>
+    </section>
+
+    <section id="guides" class="guides-section section-space" aria-labelledby="guides-title">
+      <div class="section-shell">
+        <div class="section-heading"><div><p class="eyebrow">From discovery to doing</p><h2 id="guides-title">Your next step,<br>without the hunt.</h2></div><p>Practical routes through the app. For on-device walkthroughs, open <strong>Tools and more &rarr; Guided tutorials</strong>.</p></div>
+        <div class="guide-grid">
+          <article id="guide-start" class="guide-card"><span class="card-kicker">Start here</span><h3>Your first five minutes</h3><ol><li>Download the APK below and follow Android's installation prompts.</li><li>Open <strong>Clock</strong>. Draw a deliberate X in two crossing strokes across the launch face.</li><li>Create and confirm an alphanumeric vault password of at least eight characters.</li><li>Use <strong>Add</strong> to import a small test file. Reopen it and create a verified backup before relying on the vault.</li></ol><p class="guide-note">Keep your originals until you are confident in your import and backup.</p></article>
+          <article id="guide-backup" class="guide-card"><span class="card-kicker">Before you need it</span><h3>Make an encrypted backup</h3><ol><li>Open <strong>Tools and more &rarr; Backup and restore</strong>.</li><li>Choose a destination and a separate backup password of at least ten characters.</li><li>Keep the vault open until the written file has been read back and verified.</li><li>Keep a trusted copy and test a restore. Store the password separately.</li></ol><p class="guide-note">Library backup is not chat recovery: identities, history, pending transfers, other profiles, and clock settings are excluded.</p></article>
+          <article id="guide-chat" class="guide-card"><span class="card-kicker">One-to-one</span><h3>Connect with a friend</h3><ol><li>Open <strong>Private chats</strong>, choose a local display name, and review relay conditions.</li><li>Exchange a one-time invitation link and keep both vaults open until connected.</li><li>Compare security codes through a trusted channel. Respect the conversation's verification requirement.</li><li>Select files and explicitly send. Your friend chooses <strong>Receive into vault</strong>.</li></ol><p class="guide-note">An unchecked identity is not a verified identity, even though encryption remains enabled.</p></article>
+          <article id="guide-group" class="guide-card"><span class="card-kicker">Together, by invitation</span><h3>Create a group</h3><ol><li>In <strong>Private chats</strong>, choose <strong>Create group</strong> and name it.</li><li>Open <strong>Members and settings &rarr; Invite friend</strong>.</li><li>Invitees open the invitation and explicitly choose <strong>Join group</strong>.</li><li>Use member settings for verification and admin roles. Send messages or select vault files with the attachment control.</li></ol><p class="guide-note">Everyone should use 3.20+ for vault-file sharing. Members can keep or export their own received copies.</p></article>
+          <article id="guide-nearby" class="guide-card"><span class="card-kicker">No internet route</span><h3>Pair two nearby phones</h3><ol><li>Connect both phones to the same Wi-Fi or a manually enabled hotspot.</li><li>Open <strong>Nearby transfer &rarr; Send files</strong>, select your items, and prepare a pairing code.</li><li>The other phone chooses <strong>Receive files</strong> and scans the QR or pastes the code.</li><li>The recipient reviews the list and confirms. Keep both vaults open until verified receipt.</li></ol><p class="guide-note">Treat a pairing code like an invitation for one intended receiver. Resume sharing uses a fresh code after locking.</p></article>
+          <article id="guide-export" class="guide-card"><span class="card-kicker">Know what leaves</span><h3>Export deliberately</h3><ol><li>Select the file or folders you want to copy out.</li><li>Choose <strong>File Unlock</strong> and read the plaintext warning.</li><li>Pick a writable destination folder in Android's file picker.</li><li>Review the completion report, including any partial failures or cleanup warnings.</li></ol><p class="guide-note">The vault originals remain encrypted. Exported copies do not; other apps and backup services may retain them.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety" class="section-shell section-space protection" aria-labelledby="protection-title">
+      <div><p class="eyebrow">Privacy, with perspective</p><h2 id="protection-title">Protection you can<br>understand.</h2><a class="text-link" href="privacy.html">Full privacy &amp; security details <span aria-hidden="true">&rarr;</span></a>
+        <ol class="security-steps"><li><strong>Import</strong><span>Files stream into authenticated encrypted storage.</span></li><li><strong>Unlock</strong><span>Your password and device-backed key protection open the matching vault.</span></li><li><strong>View</strong><span>Required data is decrypted for use, rather than exporting the whole library.</span></li><li><strong>Leave safely</strong><span>Safe Mode closes sensitive access and removes the task from Recents.</span></li></ol>
+      </div>
       <div class="protection-copy">
         <p>Imported files use authenticated AES-256-GCM encryption. Password-derived protection and Android Keystore guard the vault keys. Viewing decrypts the data needed for the current view, not the entire library into a public folder.</p>
         <p>Safe Mode locks when you leave. Temporary Normal Mode deliberately keeps the vault unlocked in the background until screen-off restores Safe Mode.</p>
-        <p class="limit-note">No app can promise protection from a fully compromised operating system, guaranteed physical erasure, or the recall of files someone has already copied. Keep a verified backup and a strong password.</p>
+        <div class="safety-card"><h3>The important boundaries</h3><ul><li><strong>Root or malware:</strong> a compromised operating system may observe unlocked data or capture secrets.</li><li><strong>Editing caches:</strong> some video editing and conversion use temporary app-private plaintext files. Cleanup runs on completion/failure and startup, but interruption or flash behavior can leave recoverable traces.</li><li><strong>Exports and recipients:</strong> once plaintext or a received copy leaves your control, the app cannot recall it.</li><li><strong>Recovery:</strong> there is no password-reset service. Uninstalling or clearing app data can destroy the installation's keys.</li></ul></div>
+        <p class="limit-note">No forensic-proof, root-proof, or guaranteed-erasure claims. Android controls process lifetime and memory reclamation. Keep a verified backup and a strong password.</p>
+        <p class="quiet">This website does not access your vault or run a chat relay. Feature searches stay in your browser. GitHub processes hosting/download requests under its own privacy policy.</p>
       </div>
     </section>
 
     <section id="download" class="section-shell section-space" aria-labelledby="download-title">
       <div class="download-panel">
-        <div class="download-intro"><p class="eyebrow">Your space starts here</p><h2 id="download-title">Meet your new<br>private library.</h2><p>One universal APK. No subscription.<br>For ARM64 and ARMv7 Android devices.</p>
+        <div class="download-intro"><p class="eyebrow">The download center</p><h2 id="download-title">One APK.<br>Your own space.</h2><p>Free to use. No subscription.<br>For ARM64 and ARMv7 Android devices.</p>
           <div class="download-actions"><a class="button primary" href="https://github.com/whytocode/secure-clock-vault/releases/download/v3.20/SecureClockVault-release.apk">Download APK <span aria-hidden="true">&darr;</span></a><a class="text-link" href="https://github.com/whytocode/secure-clock-vault/releases/download/v3.20/SecureClockVault-3.20-source.zip">Matching source &amp; build materials</a></div>
           <p class="release-status" role="status">Downloads are served by GitHub. No sign-in is required.</p>
           <noscript><p>All download and help links work without JavaScript. You can select and copy the checksum manually.</p></noscript>
@@ -118,22 +263,38 @@
         </div>
       </div>
       <div class="update-warning"><strong>Already using the app?</strong> Install over your existing copy. <strong>Do not uninstall or clear app data</strong> to update: that destroys the installation's vault keys. Keep a separately created, verified backup.</div>
+      <div class="download-explainer"><div><strong>Install this</strong><code>SecureClockVault-release.apk</code><p>The Android application. This is the only file needed for a normal installation.</p></div><div><strong>Read or rebuild</strong><code>SecureClockVault-3.20-source.zip</code><p>The matching application source and build materials, not an installation file.</p></div><div><strong>Usually skip this</strong><code>.apk.idsig</code><p>Optional v4 signature data for incremental-install tools. Ordinary installation does not need it.</p></div></div>
     </section>
 
     <section id="questions" class="section-shell section-space questions" aria-labelledby="questions-title">
       <div><p class="eyebrow">Before you begin</p><h2 id="questions-title">Good questions.<br>Straight answers.</h2><p class="quiet">Need to report a problem?<br><a href="https://github.com/whytocode/secure-clock-vault/issues">Public issue tracker</a></p></div>
       <div class="faq-list">
-        <details><summary>How do I install and open the app?</summary><div><ol><li>Download the APK from this page on a compatible Android device.</li><li>If Android asks, allow this browser or file manager to install this app. Review the system prompts. You can revoke the install permission afterward; do not disable Play Protect.</li><li>Open <strong>Clock</strong>. On the initial minimal screen, draw a deliberate X in two strokes to open setup. Create and confirm an alphanumeric password of at least eight characters.</li><li>Import a small test file first and make sure you can reopen it. Keep originals until you have verified your import and backup.</li></ol><p>Android or your device administrator may restrict installation. Follow official platform guidance; a website cannot override those restrictions.</p></div></details>
+        <details><summary>How do I install and open the app?</summary><div><ol><li>Download the APK from this page on a compatible Android device.</li><li>If Android asks, allow this browser or file manager to install this app. Review the system prompts. You can revoke the install permission afterward; do not disable Play Protect.</li><li>Open <strong>Clock</strong>. Draw a deliberate X in two long, crossing strokes over the launch clock face. Create and confirm an alphanumeric password of at least eight characters.</li><li>Import a small test file first and make sure you can reopen it. Keep originals until you have verified your import and backup.</li></ol><p>Android or your device administrator may restrict installation. Follow official platform guidance; a website cannot override those restrictions.</p></div></details>
+        <details><summary>How do I return from the full clock mode?</summary><div><p>On the normal launch clock, draw the two-stroke X. If you enabled <strong>Extreme Camouflage Mode</strong>, open its Clock tab and continuously hold the large digital time for four seconds, then enter your password. Successful authentication returns to the vault and disables that camouflage mode until you enable it again.</p><p>Leaving a password prompt or entering a wrong password does not disable camouflage.</p></div></details>
+        <details><summary>Does unlocking decrypt all my files?</summary><div><p>No. It makes the matching vault keys available so the app can read the data required for your current action. The library is not bulk-exported into a public folder. Decrypted content can exist in RAM while viewed; some video editing/conversion also requires temporary app-private plaintext files. See <a href="#safety">the security boundaries</a>.</p></div></details>
+        <details><summary>Can someone take the signing key from the download?</summary><div><p>The APK and optional <code>.idsig</code> expose public verification data, not the private release signing key. The corresponding source download does not contain the signing keystore or its password.</p><p>Others may rebuild the open-source app with their own key, but those builds cannot normally replace an installed official version. A publisher's signing key is also different from each user's vault-encryption keys. The public signing-certificate fingerprint is in <a href="privacy.html#licenses">the release integrity details</a>.</p></div></details>
         <details><summary>Is this a Play Store app?</summary><div><p>This page distributes an independently signed APK, not a Google Play listing. Updates require downloading and installing a newer release over the current app.</p><p>Android developer-verification rules are evolving. Google's current guidance distinguishes the initial participating-store rollout from direct sideloading and describes an advanced flow for unregistered apps. Check the <a href="https://developer.android.com/developer-verification/guides/faq">official Android guidance</a> for your device and region. Hosting a download is not Google approval.</p></div></details>
         <details><summary>Does everything need the internet?</summary><div><p>No. The encrypted library and clock work locally. Private chats use third-party encrypted relays while unlocked. Explicit public-link imports also use the internet. Offline Nearby sharing needs a compatible shared local network, but no chat identity or internet connection.</p></div></details>
         <details><summary>What happens if I forget my password?</summary><div><p>There is no password-reset service that can recover your vault. Uninstalling, clearing app data, or losing the installation's Keystore key can make local data unrecoverable.</p><p>A separately created library backup can restore the backed-up library with its own backup password. It does not recover the original password or chat identity/history. Test your backup before relying on it.</p></div></details>
+        <details><summary>Why does the app ask for these permissions?</summary><div><p>Android's file picker grants access to the documents and folders you select. Network access supports optional chats and public-link imports; Nearby may need a local-network permission. The camera is optional for Nearby QR scanning, with pasted codes as an alternative. Notifications and exact-alarm access support alarms, timers, and playlist reminders.</p><p>The clock artwork does not request your location. See <a href="privacy.html#app">the full permission and data explanation</a>.</p></div></details>
+        <details><summary>Why does a photo or video preview fail?</summary><div><p>A file may use an unsupported codec/container, have missing metadata, or be damaged. Android 8.0 has additional preview-resolution limits. A missing video thumbnail does not necessarily prevent an attempt to play it. Check a small, known-good file first and keep the original while investigating; errors do not mean the app silently repaired the file.</p></div></details>
+        <details><summary>Why did an alarm, reminder, or transfer not finish?</summary><div><p>Check notification and exact-alarm permissions for clock events. Android and manufacturer restrictions can affect scheduling; some reminders are explicitly approximate when exact-alarm access is unavailable.</p><p>For transfers, keep the vaults open, check the network and local permissions, and inspect the reported state before retrying. Relays are best-effort and Nearby can be blocked by router isolation. Sent, relay-accepted, and verified vault-saved are different states.</p></div></details>
         <details><summary>What should I know about group sharing?</summary><div><p>Use version 3.20 or later on every recipient's device for vault-file sharing. Group files use relay delivery, not Nearby, and have a 100 MiB per-file limit. Receipt tracking waits for the original recipients' confirmed vault saves before automatic relay cleanup.</p><p>Members can retain or export copies. Removing a member does not erase those copies, and groups are not anonymous to their members. Missing receipts, offline users, and relay expiry can affect availability. Removing a member and cancelling a transfer can show a connection warning; Retry reconciles the remaining chats.</p></div></details>
         <details><summary>Can I read the source or report an issue privately?</summary><div><p>The matching source, build instructions, and third-party source materials accompany each public APK release under AGPL-3.0. See <a href="privacy.html#licenses">licensing and source availability</a>.</p><p>The public GitHub issue tracker accepts non-sensitive bug reports and source-availability requests. Reports and replies are publicly visible. Do not post vault files, passwords, private messages, or other people's personal information in public reports. No private support or password-recovery service is promised.</p></div></details>
         <details><summary>What changed in version 3.20?</summary><div><p>Encrypted group conversations, invitations, member verification, admin controls, and vault-file sharing were added. Recipient-aware save receipts prevent the first recipient from causing early cleanup for everyone else. The existing vault theme and locking behavior are retained.</p><p>This release was exercised on emulators; compatibility across every manufacturer and device is not guaranteed.</p></div></details>
       </div>
     </section>
+
+    <section id="resources" class="section-shell resources-section" aria-labelledby="resources-title">
+      <div class="section-heading"><div><p class="eyebrow">Nothing hidden in the footer</p><h2 id="resources-title">The practical details.<br>All in one place.</h2></div><p>An independent project with readable source, clear notices, and public ways to report a problem.</p></div>
+      <div class="resource-grid">
+        <article class="resource-card"><span class="card-kicker">Open source</span><h3>Read it. Build it. Understand it.</h3><p>The app and website use AGPL-3.0-only. The app's matching source bundle is 176.8 MB and includes build scripts and pinned native source materials.</p><p><a href="https://github.com/whytocode/secure-clock-vault/releases/download/v3.20/SecureClockVault-3.20-source.zip">Download the corresponding source archive.</a></p><p class="quiet">GitHub's automatic website-repository source ZIP is not the Android application's corresponding source.</p></article>
+        <article class="resource-card"><span class="card-kicker">Privacy &amp; licenses</span><h3>The details behind the claims</h3><p>Understand local storage, optional relays, hosting logs, permissions, limitations, and third-party acknowledgments.</p><a class="text-link" href="privacy.html">Read the full policy <span aria-hidden="true">&rarr;</span></a><a class="text-link" href="licenses/NOTICE.txt">Distribution notice <span aria-hidden="true">&rarr;</span></a></article>
+        <article class="resource-card"><span class="card-kicker">Public support</span><h3>A useful report helps</h3><p>Include the app version, Android version, device model, steps to reproduce, and the visible error. Redact any sensitive details.</p><p><a href="https://github.com/whytocode/secure-clock-vault/issues">Public issue tracker</a></p><p class="quiet">Issues and replies are public. Never attach vault files, passwords, private messages, or other people's data.</p></article>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer section-shell"><a class="brand" href="index.html"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Secure Clock Vault</span></a><p>Independent software. Open source. No warranty.</p><nav aria-label="Footer navigation"><a href="privacy.html">Privacy &amp; security</a><a href="privacy.html#licenses">Licenses &amp; source</a></nav></footer>
+  <footer class="site-footer section-shell"><a class="brand" href="index.html"><img src="assets/icon.svg" alt="" width="32" height="32"><span>Secure Clock Vault</span></a><p>Independent software. Open source. No warranty.</p><nav aria-label="Footer navigation"><a href="#guides">Guides</a><a href="#download">Download</a><a href="privacy.html">Privacy &amp; security</a><a href="privacy.html#licenses">Licenses &amp; source</a></nav></footer>
 </body>
 </html>

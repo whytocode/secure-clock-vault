@@ -2,6 +2,8 @@
 
 An independent Android encrypted file vault and clock application.
 This repository contains the public website, its original source, and release notices.
+The website brings together 20 searchable feature cards, screenshots, clock artwork,
+sharing comparisons, six how-to guides, security information, downloads, and FAQs.
 
 - [Website and installation help](https://whytocode.github.io/secure-clock-vault/)
 - [Current release](https://github.com/whytocode/secure-clock-vault/releases/latest)
@@ -44,8 +46,9 @@ archive, copy `website-source/` to `SecureClockVault/website/`, and follow
 The builder requires Python 3.9+ and the verified release APK/source files. It
 does not need npm, external fonts, analytics, or a backend.
 
-The screenshots use synthetic demo files. The small clock tile is original
-illustrative website artwork, not an application screenshot.
+The screenshots use synthetic demo files. The clock tile and analog dial are original
+illustrative website artwork, not application screenshots. Feature search runs locally
+in the browser; the complete catalogue and guides also work without JavaScript.
 
 ## Licensing and support
 
