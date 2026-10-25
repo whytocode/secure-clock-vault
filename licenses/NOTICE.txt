@@ -1,0 +1,40 @@
+Secure Clock Vault
+
+This combined application is distributed under the GNU Affero General Public
+License, version 3 (AGPL-3.0-only). See LICENSE. There is no warranty.
+The original application source and build scripts accompany each release.
+Third-party components retain their own copyrights and licenses.
+
+SimpleX Chat native core, version 7.0.3
+Copyright SimpleX Chat Ltd and contributors.
+License: AGPL-3.0
+Source: https://github.com/simplex-chat/simplex-chat/tree/v7.0.3
+Unmodified libapp-lib.so, libsimplex.so and libsupport.so are extracted from
+the official checksum-pinned ARM64 and ARMv7 release APKs. No SimpleX user
+interface, branding, artwork, calling or billing libraries are included.
+The exact artifacts and SHA-256 values are in app/build.gradle.kts.
+The original source includes JNI glue, Haskell code, pinned cabal/Nix
+dependencies, and scripts/simplex-chat-reproduce-builds-android.sh.
+Native dependency notices are bundled in app/src/main/assets/licenses.
+SQLCipher and the native dependencies retain their BSD/MIT/Apache/GPL
+notices as supplied by upstream.
+
+ZXing core, version 3.5.4
+Copyright ZXing authors.
+License: Apache License 2.0
+Source: https://github.com/zxing/zxing
+Used for on-device invitation QR generation and optional Nearby QR scanning.
+License: app/src/main/assets/licenses/ZXing-Apache-2.0.txt
+
+AndroidX, Compose, Room, Material 3, Media3, Kotlin and Coil retain their
+respective Apache-2.0 notices. Their pinned coordinates are in
+gradle/libs.versions.toml and app/build.gradle.kts. Platform and build-tool
+dependencies are obtained through the repositories configured in Gradle.
+
+Distribution: provide the matching SecureClockVault-<version>-source.zip beside
+the APK, at no extra charge. It contains this application's complete source
+and build scripts plus the upstream native source and pinned Git dependency
+sources. Preserve these notices. Anyone redistributing changed versions
+must meet AGPL requirements for those changes and corresponding source.
+Signing passwords, private keys and user vaults are never part of source
+distribution. Rebuilds use the builder's own Android signing identity.
