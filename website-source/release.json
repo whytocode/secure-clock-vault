@@ -1,11 +1,11 @@
 {
-  "version": "3.20",
-  "versionCode": 37,
+  "version": "3.21",
+  "versionCode": 38,
   "apkFilename": "SecureClockVault-release.apk",
   "apkBytes": 102623927,
-  "apkSha256": "a3b30a903fdc665e5c220a2529d639b14226dcee620ff2fd1715f0d2447bc0f4",
-  "sourceFilename": "SecureClockVault-3.20-source.zip",
-  "sourceBytes": 176772254,
-  "sourceSha256": "7ac5a2a00bbbd8ea37f6863231f358d5212b25b6224a44ea0fb4f8238721156e",
+  "apkSha256": "347d25fe14b8203ede8593683e9fd2d0ff2ddf3fd175612186d4823eb981d0bb",
+  "sourceFilename": "SecureClockVault-3.21-source.zip",
+  "sourceBytes": 177859186,
+  "sourceSha256": "104a715a1346e100695bc7fa364991ac0accc7f967d351cfac142f46f37745c2",
   "certificateSha256": "066845128389424015bf948f45fe68ca20b2e08e37c5d7250d9eafb14b09dbb9"
 }

@@ -31,7 +31,7 @@
   <main id="main">
     <section class="hero section-shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <a class="release-pill" href="#sharing"><span>New in {{VERSION}}</span> Encrypted group chats <span aria-hidden="true">&rarr;</span></a>
+        <a class="release-pill" href="#showcase"><span>New in {{VERSION}}</span> Refined daylight theme <span aria-hidden="true">&rarr;</span></a>
         <p class="eyebrow hero-eyebrow">An independent Android app</p>
         <h1 id="hero-title">A little clock.<br><span>A private world.</span></h1>
         <p class="hero-description">Your photos, files, notes, and conversations deserve their own space. Keep them in an encrypted vault, enjoy a richer media library, and return to a beautifully ordinary clock.</p>
@@ -51,9 +51,9 @@
         </div>
         <div class="phone">
           <div class="phone-speaker" aria-hidden="true"></div>
-          <img src="assets/library.png" alt="Vault library with Safe Mode, encrypted folders, photo previews, and Library, Loved, and Private chats navigation." width="600" height="1031" fetchpriority="high">
+          <img src="assets/daylight.png" alt="Refreshed daylight vault with warm porcelain surfaces, ink-blue controls, encrypted folders, and photo previews." width="600" height="1187" fetchpriority="high">
         </div>
-        <figcaption>Real app interface with demo files.<br>The small clock tile is an illustration.</figcaption>
+        <figcaption>The new daylight theme with demo files.<br>The small clock tile is an illustration.</figcaption>
       </figure>
     </section>
 
@@ -182,7 +182,7 @@
       <div class="section-shell">
         <div class="section-heading">
           <div><p class="eyebrow">A closer look</p><h2 id="showcase-title">Less clutter.<br>More of what matters.</h2></div>
-          <p>Soft surfaces, a restrained blue palette, and controls that stay familiar across your library.</p>
+          <p>New in 3.21: warm porcelain surfaces, ink-blue accents, and clearer card edges in daylight. The familiar night theme and clock styling stay unchanged.</p>
         </div>
         <div class="screenshot-grid">
           <figure><div class="screen-frame dark-frame"><img src="assets/library.png" alt="Dark library screen showing folder and image previews." width="600" height="1031" loading="lazy"></div><figcaption><strong>Your library, at a glance</strong><span>Folders, previews, and favorites.</span></figcaption></figure>
@@ -281,7 +281,8 @@
         <details><summary>Why did an alarm, reminder, or transfer not finish?</summary><div><p>Check notification and exact-alarm permissions for clock events. Android and manufacturer restrictions can affect scheduling; some reminders are explicitly approximate when exact-alarm access is unavailable.</p><p>For transfers, keep the vaults open, check the network and local permissions, and inspect the reported state before retrying. Relays are best-effort and Nearby can be blocked by router isolation. Sent, relay-accepted, and verified vault-saved are different states.</p></div></details>
         <details><summary>What should I know about group sharing?</summary><div><p>Use version 3.20 or later on every recipient's device for vault-file sharing. Group files use relay delivery, not Nearby, and have a 100 MiB per-file limit. Receipt tracking waits for the original recipients' confirmed vault saves before automatic relay cleanup.</p><p>Members can retain or export copies. Removing a member does not erase those copies, and groups are not anonymous to their members. Missing receipts, offline users, and relay expiry can affect availability. Removing a member and cancelling a transfer can show a connection warning; Retry reconciles the remaining chats.</p></div></details>
         <details><summary>Can I read the source or report an issue privately?</summary><div><p>The matching source, build instructions, and third-party source materials accompany each public APK release under AGPL-3.0. See <a href="privacy.html#licenses">licensing and source availability</a>.</p><p>{{SUPPORT_DESCRIPTION}} Do not post vault files, passwords, private messages, or other people's personal information in public reports. No private support or password-recovery service is promised.</p></div></details>
-        <details><summary>What changed in version 3.20?</summary><div><p>Encrypted group conversations, invitations, member verification, admin controls, and vault-file sharing were added. Recipient-aware save receipts prevent the first recipient from causing early cleanup for everyone else. The existing vault theme and locking behavior are retained.</p><p>This release was exercised on emulators; compatibility across every manufacturer and device is not guaranteed.</p></div></details>
+        <details><summary>What changed in version 3.21?</summary><div><p>The vault's day theme now pairs warm porcelain backgrounds with ink-blue accents, clearer card edges, and coordinated sign-in, dialogs, sheets, and controls. The night palette, clock styling, and security behavior are unchanged.</p><p>The source project also uses Android Gradle Plugin 9.2.1 and Gradle 9.4.1 for Android Studio compatibility. Install the signed APK over your existing app; do not uninstall or clear app data. An in-place upgrade from 3.20 retained the test vault and password on an emulator; compatibility with every physical device is not guaranteed.</p></div></details>
+        <details><summary>What changed in version 3.20?</summary><div><p>Encrypted group conversations, invitations, member verification, admin controls, and vault-file sharing were added. Recipient-aware save receipts prevent the first recipient from causing early cleanup for everyone else. The existing vault theme and locking behavior were retained in that release.</p></div></details>
       </div>
     </section>
 

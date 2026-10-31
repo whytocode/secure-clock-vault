@@ -11,10 +11,13 @@ sharing comparisons, six how-to guides, security information, downloads, and FAQ
 
 ## Download and update
 
-Release 3.20 supports Android 8.0+ on ARM64 and ARMv7 devices.
+Release 3.21 supports Android 8.0+ on ARM64 and ARMv7 devices.
 Download **SecureClockVault-release.apk** from Releases. Install updates over the
 existing app; **do not uninstall or clear app data** to update. Keep a separately
 created, verified library backup.
+
+Version 3.21 refreshes the day theme with porcelain surfaces, ink-blue accents,
+and clearer card edges. Night and clock styling remain unchanged.
 
 The APK uses the existing release signing identity. The website's release panel
 provides its SHA-256 checksum. A checksum or signature is not an independent
@@ -23,7 +26,7 @@ security certification.
 ## Corresponding application source
 
 Every APK release includes the specifically named
-**SecureClockVault-3.20-source.zip** attachment, at no extra charge. It contains the
+**SecureClockVault-3.21-source.zip** attachment, at no extra charge. It contains the
 matching application source, build configuration, native build recipes, and all
 11 pinned upstream source archives.
 

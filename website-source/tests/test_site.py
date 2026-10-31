@@ -99,7 +99,7 @@ class SiteTests(unittest.TestCase):
 
     def test_screenshot_dimensions(self):
         import struct
-        for name, height in (("library.png", 1031), ("review.png", 1031), ("members.png", 1059)):
+        for name, height in (("library.png", 1031), ("daylight.png", 1187), ("review.png", 1031), ("members.png", 1059)):
             with (ROOT / "assets" / name).open("rb") as stream:
                 header = stream.read(24)
             self.assertEqual(header[:8], b"\x89PNG\r\n\x1a\n")
@@ -129,6 +129,7 @@ class SiteTests(unittest.TestCase):
 
     @unittest.skipUnless(os.environ.get("SCV_ARTIFACTS"), "Set SCV_ARTIFACTS to check actual release assets.")
     def test_verified_builds_and_internal_links(self):
+        release = json.loads((ROOT / "release.json").read_text())
         build_root = ROOT.parent / "build"
         build_root.mkdir(exist_ok=True)
         with tempfile.TemporaryDirectory(prefix="site-tests-", dir=build_root) as temporary:
@@ -154,8 +155,11 @@ class SiteTests(unittest.TestCase):
                             self.assertIn(unquote(parsed.fragment), Document(target.read_text()).ids)
                 home = (output / "index.html").read_text()
                 if repository:
-                    self.assertIn("/releases/download/v3.20/SecureClockVault-release.apk", home)
-                    self.assertIn("/releases/download/v3.20/SecureClockVault-3.20-source.zip", home)
+                    download_path = f'/releases/download/v{release["version"]}'
+                    self.assertIn(f'{download_path}/{release["apkFilename"]}', home)
+                    self.assertIn(f'{download_path}/{release["sourceFilename"]}', home)
+                    self.assertIn(f'New in {release["version"]}</span> Refined daylight theme', home)
+                    self.assertIn(f'What changed in version {release["version"]}?', home)
                     self.assertNotIn("{{", home)
                 else:
                     self.assertNotIn("/releases/download/", home)

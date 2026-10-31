@@ -12,7 +12,7 @@ from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parent
-ASSETS = ("icon.svg", "site.css", "site.js", "library.png", "review.png", "members.png")
+ASSETS = ("icon.svg", "site.css", "site.js", "library.png", "daylight.png", "review.png", "members.png")
 LICENSES = ("Native-dependencies.txt", "SimpleX-AGPL-3.0.txt",
             "SimpleX-Conditions.txt", "ZXing-Apache-2.0.txt")
 
